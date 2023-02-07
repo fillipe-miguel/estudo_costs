@@ -4,14 +4,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Layouts
-import Container from "./Components/layout/Container";
-import Footer from "./Components/layout/Footer";
-import Navbar from "./Components/layout/Navbar";
+import Container from "./Components/layout/Container/Container";
+import Footer from "./Components/layout/Footer/Footer";
+import Navbar from "./Components/layout/Navbar/Navbar";
 
 // Pages
 import Company from "./Components/pages/Company";
 import Contact from "./Components/pages/Contact";
-import Home from "./Components/pages/Home";
+import Home from "./Components/pages/Home/Home";
 import NewProject from "./Components/pages/NewProject";
 import Projects from "./Components/pages/Projects";
 

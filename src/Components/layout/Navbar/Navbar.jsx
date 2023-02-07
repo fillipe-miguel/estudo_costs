@@ -4,13 +4,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Layouts
-import Container from "./Container";
+import Container from "../Container/Container";
 
 // Styles
 import styles from "./Navbar.module.css";
 
 // Assets
-import logo from "../../assets/imgs/costs_logo.png";
+import logo from "../../../assets/imgs/costs_logo.png";
 
 const Navbar = () => {
     return (
