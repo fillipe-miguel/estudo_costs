@@ -2,10 +2,10 @@ import React from "react";
 
 import styles from "./container.module.css";
 
-const Container = (props) => {
+const Container = ({ customClass, children }) => {
     return (
-        <div className={`${styles.container} ${styles[props.customClass]}`}>
-            {props.children}
+        <div className={`${styles.container} ${styles[customClass]}`}>
+            {children}
         </div>
     );
 };
