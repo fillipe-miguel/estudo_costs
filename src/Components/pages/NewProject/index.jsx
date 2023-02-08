@@ -9,6 +9,7 @@ import ProjectForm from "../../project/ProjectForm";
 import style from "./style.module.css";
 
 const NewProject = () => {
+    // Para chamar outra page podendo passar infos pelo state
     const history = useNavigate();
 
     function createPost(project) {
@@ -27,6 +28,7 @@ const NewProject = () => {
                 resp.json();
             })
             .then((data) => {
+                // Chamando outra page passando a menssagem
                 history("/projects", {
                     state: { message: "Projeto criado com sucesso!" },
                 });

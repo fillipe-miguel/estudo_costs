@@ -18,7 +18,12 @@ const Projects = () => {
     const [removeLoad, setRemoveLoad] = useState(false);
     const [projectMessage, setProjectMessage] = useState("");
 
+    let message;
+
+    // Usado para traser os dados do DB quando a pagina renderiza
     useEffect(() => {
+        let fakeServerTimeResponse = Math.random() * 3000;
+
         // Esse setTimeout serve para simular o atraso de uma requisisção http normal em um servidor remoto
         setTimeout(() => {
             // Pegando os projetos do banco de dados!
@@ -36,7 +41,7 @@ const Projects = () => {
                 .catch((err) => {
                     console.log(err);
                 });
-        }, 324);
+        }, fakeServerTimeResponse);
     }, []);
 
     function removeProject(id) {
@@ -62,9 +67,10 @@ const Projects = () => {
             });
     }
 
+    // Para pegar as informações passadas pelo call no new project
     const location = useLocation();
-    let message = "";
 
+    // TODO: Refatorar essa forma de trazer as infos pois quando da refresh aparece de novo
     if (location.state) {
         message = location.state.message;
     }
@@ -75,12 +81,13 @@ const Projects = () => {
                 <h1>Meus projetos</h1>
                 <LinkButton to={"/newproject"}>Criar Projeto</LinkButton>
             </div>
-            
+
             {message && <Message type="success" message={message} />}
 
             {projectMessage && (
                 <Message type="success" message={projectMessage} />
             )}
+
             <Container customClass="start">
                 {projects.length > 0 &&
                     projects.map((project) => (

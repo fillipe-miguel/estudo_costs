@@ -10,6 +10,17 @@
       "costs": 0,
       "services": [],
       "id": 2
+    },
+    {
+      "name": "Minha casa minha vida",
+      "budget": "12342",
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 3
     }
   ],
   "categories": [
