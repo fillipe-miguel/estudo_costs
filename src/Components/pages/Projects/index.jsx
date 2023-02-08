@@ -16,6 +16,7 @@ import style from "./style.module.css";
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [removeLoad, setRemoveLoad] = useState(false);
+    const [projectMessage, setProjectMessage] = useState("");
 
     useEffect(() => {
         // Esse setTimeout serve para simular o atraso de uma requisisção http normal em um servidor remoto
@@ -38,6 +39,29 @@ const Projects = () => {
         }, 324);
     }, []);
 
+    function removeProject(id) {
+        // Removendo os projetos do DB
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(() => {
+                // Filtrando e passando uma nova lista de projetos para se renderizado na tela
+                let filteredProjects = projects.filter(
+                    (project) => project.id != id
+                );
+                setProjects(filteredProjects);
+
+                // Atribuindo a menssagem para passar ao componente de mesnssagem
+                setProjectMessage("Projeto Removido com Sucesso!");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     const location = useLocation();
     let message = "";
 
@@ -51,16 +75,22 @@ const Projects = () => {
                 <h1>Meus projetos</h1>
                 <LinkButton to={"/newproject"}>Criar Projeto</LinkButton>
             </div>
+            
             {message && <Message type="success" message={message} />}
+
+            {projectMessage && (
+                <Message type="success" message={projectMessage} />
+            )}
             <Container customClass="start">
                 {projects.length > 0 &&
                     projects.map((project) => (
                         <ProjectCard
-                            name={project.name}
                             id={project.id}
+                            key={project.id}
+                            name={project.name}
                             budget={project.budget}
                             category={project.category.name}
-                            key={project.id}
+                            handleRemove={removeProject}
                         />
                     ))}
                 {!removeLoad && <Loading />}
