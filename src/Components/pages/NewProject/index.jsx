@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 // Components
-import ProjectForm from "../../projects/ProjectForm";
+import ProjectForm from "../../project/ProjectForm";
 
 // Styles
 import style from "./style.module.css";
@@ -27,7 +27,6 @@ const NewProject = () => {
                 resp.json();
             })
             .then((data) => {
-                console.log(data);
                 history("/projects", {
                     state: { message: "Projeto criado com sucesso!" },
                 });
