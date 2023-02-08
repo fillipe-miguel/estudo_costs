@@ -13,6 +13,7 @@ import Company from "./Components/pages/Company";
 import Contact from "./Components/pages/Contact";
 import Home from "./Components/pages/Home/Home";
 import NewProject from "./Components/pages/NewProject";
+import Project from "./Components/pages/Project";
 import Projects from "./Components/pages/Projects";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/company" element={<Company />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:id" element={<Project />} />
                     <Route path="/newproject" element={<NewProject />} />
                 </Routes>
             </Container>
