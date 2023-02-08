@@ -51,13 +51,7 @@ const Projects = () => {
                 <h1>Meus projetos</h1>
                 <LinkButton to={"/newproject"}>Criar Projeto</LinkButton>
             </div>
-            {message && (
-                <Message
-                    handleClearMessage={handleClearMessage}
-                    type="success"
-                    message={message}
-                />
-            )}
+            {message && <Message type="success" message={message} />}
             <Container customClass="start">
                 {projects.length > 0 &&
                     projects.map((project) => (
