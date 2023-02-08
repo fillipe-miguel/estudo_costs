@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-import style from "./Home.module.css";
+import style from "./style.module.css";
 
 // Assets
 import savings from "../../../assets/imgs/savings.svg";
