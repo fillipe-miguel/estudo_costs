@@ -28,7 +28,7 @@ const NewProject = () => {
             .then((data) => {
                 console.log(data);
                 history("/projects", {
-                    message: "Projeto criado com sucesso!",
+                    state: { message: "Projeto criado com sucesso!" },
                 });
             })
             .catch((err) => {
