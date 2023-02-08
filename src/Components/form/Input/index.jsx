@@ -8,6 +8,7 @@ const Input = ({ type, text, name, placeholder, handleOnChange, value }) => {
         <div className={style.form_control}>
             <label htmlFor={name}>{text}</label>
             <input
+                required
                 id={name}
                 type={type}
                 name={name}
