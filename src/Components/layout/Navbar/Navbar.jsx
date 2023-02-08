@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Layouts
-import Container from "../Container/Container";
+import Container from "../Container";
 
 // Styles
 import styles from "./Navbar.module.css";

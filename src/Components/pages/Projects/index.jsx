@@ -4,7 +4,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 // Components
+import Container from "../../layout/Container";
+import LinkButton from "../../layout/LinkButton";
 import Message from "../../layout/Message";
+
+// Styles
+import style from "./style.module.css";
 
 const Projects = () => {
     const location = useLocation();
@@ -16,9 +21,15 @@ const Projects = () => {
     }
 
     return (
-        <div>
-            <h1>Meus projetos</h1>
+        <div className={style.projects_container}>
+            <div className={style.title_container}>
+                <h1>Meus projetos</h1>
+                <LinkButton to={"/newproject"}>Criar Projeto</LinkButton>
+            </div>
             {message && <Message type="success" message={message} />}
+            <Container customClass="start">
+                <p>Projetos</p>
+            </Container>
         </div>
     );
 };

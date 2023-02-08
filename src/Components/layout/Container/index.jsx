@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./container.module.css";
+import styles from "./style.module.css";
 
 const Container = ({ customClass, children }) => {
     return (

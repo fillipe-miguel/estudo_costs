@@ -4,7 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Layouts
-import Container from "./Components/layout/Container/Container";
+import Container from "./Components/layout/Container";
 import Footer from "./Components/layout/Footer/Footer";
 import Navbar from "./Components/layout/Navbar/Navbar";
 
